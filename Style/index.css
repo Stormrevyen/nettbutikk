@@ -1,3 +1,72 @@
+.sip {
+  --SIPLilla: #46378a;
+  --SIPGul: #fdc300;
+  --SIPOrange: #ff9300;
+}
+
+body {
+  background-color: gray;
+  width: 100%;
+  height: 100%;
+}
+
+header {
+  background-color: white;
+  height: auto;
+}
+
+header #logo {
+  width: 60px;
+  margin: auto;
+}
+
+header #nav {
+  margin-top: -60px;
+  position: -webkit-sticky;
+  position: sticky;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+header #nav li {
+  list-style-type: none;
+}
+
+header #nav li a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+header #nav li a:hover {
+  text-decoration: underline;
+}
+
+header #nav #handlekurv {
+  justify-self: flex-end;
+}
+
+header #nav .sip {
+  color: var(--SIPOrange);
+}
+
+main .fyll {
+  width: 80%;
+  margin: 5px auto;
+  height: 1000px;
+  background-color: red;
+}
+
+main .fyll h1 {
+  color: white;
+  font-size: 5em;
+}
+
 #mobileOverlay {
   position: fixed;
   top: 0;
