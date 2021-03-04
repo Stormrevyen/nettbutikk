@@ -9,37 +9,7 @@ body {
   width: 100%;
   height: 100%;
 }
-header {
-  background-color: white;
-  height: auto;
-  #logo {
-    width: 60px;
-    margin: auto;
-  }
-  #nav {
-    margin-top: -60px;
-    position: sticky;
-    display: flex;
-    flex-direction: row;
-    li {
-      list-style-type: none;
-      a {
-        text-decoration: none;
-        color: black;
-        font-weight: bold;
-        &:hover {
-          text-decoration: underline;
-        }
-      }
-    }
-    #handlekurv {
-      justify-self: flex-end;
-    }
-    .sip {
-      color: var(--SIPOrange);
-    }
-  }
-}
+
 main {
   .fyll {
     width: 80%;
