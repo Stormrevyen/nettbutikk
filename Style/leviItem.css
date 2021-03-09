@@ -13,28 +13,7 @@
   clear: both;
 }
 
-html,
-body {
-  width: 100%;
-  height: 100%;
-}
-
-body {
-  font-family: "Myriad Pro", sans-serif;
-  font-size: 100%;
-  line-height: 1.5;
-  color: #787878;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-@media (max-width: 600px) {
-  body {
-    font-size: 70%;
-  }
-}
-
-a {
+#wrap-3d a {
   text-decoration: none;
   color: #46378a;
 }
@@ -58,6 +37,12 @@ strong {
           perspective: 150rem;
   -webkit-perspective-origin: 50% 110%;
           perspective-origin: 50% 110%;
+}
+
+@media (max-width: 600px) {
+  .wrap-3d {
+    font-size: 70%;
+  }
 }
 
 .item-3d {
@@ -317,111 +302,13 @@ strong {
   transition: opacity 0.25s;
 }
 
-.item-caption p a:after {
-  content: "\003E";
-  padding-left: 0.5rem;
-  text-decoration: none;
-}
-
 .item-caption p a:hover:before, .item-caption p a:active:before, .item-caption p a:focus:before {
   opacity: 0.5;
 }
 
-.intro {
-  position: relative;
-  width: 100%;
-  max-width: 50rem;
-  margin: 0 auto;
-  padding: 15% 2rem;
-  text-align: center;
-}
-
-.intro:after {
-  content: "\2193";
-  position: absolute;
-  bottom: 20%;
-  left: 0;
-  width: 100%;
-  font-size: 150%;
-  -webkit-animation: scroll-arrw 1s -1s infinite linear;
-          animation: scroll-arrw 1s -1s infinite linear;
-}
-
-@-webkit-keyframes scroll-arrw {
-  0% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-    opacity: 0;
-  }
-  50% {
-    -webkit-transform: translateY(80%);
-            transform: translateY(80%);
-    opacity: 1;
-  }
-  100% {
-    -webkit-transform: translateY(160%);
-            transform: translateY(160%);
-    opacity: 0;
-  }
-}
-
-@keyframes scroll-arrw {
-  0% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-    opacity: 0;
-  }
-  50% {
-    -webkit-transform: translateY(80%);
-            transform: translateY(80%);
-    opacity: 1;
-  }
-  100% {
-    -webkit-transform: translateY(160%);
-            transform: translateY(160%);
-    opacity: 0;
-  }
-}
-
-.intro h1 {
-  font-size: 250%;
-  font-weight: normal;
-  color: #ff9300;
-}
-
-.intro p {
-  margin-bottom: 2rem;
-  font-size: 175%;
-  line-height: 1.4286;
-}
-
-.footer {
-  padding: 0 2rem 20% 2rem;
-  text-align: center;
-  -webkit-transform: translateZ(0);
-          transform: translateZ(0);
-}
-
-.footer a {
-  display: inline-block;
-  position: relative;
-  color: #ff9300;
-}
-
-.footer a:before {
-  content: "";
-  position: absolute;
-  right: 0;
-  bottom: 3px;
-  left: 0;
-  height: 1px;
-  background-color: #ff9300;
-  opacity: 0;
-  -webkit-transition: opacity 0.25s;
-  transition: opacity 0.25s;
-}
-
-.footer a:hover:before, .footer a:active:before, .footer a:focus:before {
-  opacity: 0.5;
+.item-caption p a:active {
+  -webkit-text-decoration: #46378a;
+          text-decoration: #46378a;
+  color: #46378a;
 }
 /*# sourceMappingURL=leviItem.css.map */

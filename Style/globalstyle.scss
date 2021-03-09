@@ -1,5 +1,14 @@
 /* Globalt stilark - Alt i denne filen er felles for alle nettstedets sider. */
 @import url("https://use.typekit.net/nvi4ogw.css"); /*Importerer fonter lisensert til Adobe Fonts*/
+$siplilla: #46378a;
+$sipgul: #fdc300;
+$siporange: #ff9300;
+
+@mixin wide-m {
+  @media screen and (max-width: 780px) {
+    @content;
+  }
+}
 
 html,
 body {
@@ -9,36 +18,53 @@ body {
   overflow-x: hidden;
   overflow: inherit;
   width: 100%;
+  height: 100%;
+  background-color: #f0f0f0;
+  font-family: "Myriad Pro", sans-serif;
+  font-size: 100%;
+  line-height: 1.5;
 }
 
-#helesiden {
-  /*Klasse for sidens innhold, inkluderer header men ikke footer.*/
-  display: flex;
-  flex-flow: column;
-  width: 100%;
-  background: linear-gradient(
-    to top,
-    #ca3f44,
-    #e98051
-  ); /* Vertikal overgang fra orange til rød nedover siden. */
-  padding: 0 0 2vw 0;
-  z-index: auto; /* Sørger for at bakgrunnen alltid er det bakerste elementet. */
+.mobileHide {
+  @include wide-m {
+    display: none;
+  }
 }
 
 /*  - Header -    */
 .upperHeader {
   padding-top: 5px;
   background-color: white;
-  div {
-    width: 60px;
-    margin: auto;
+  a {
+    display: inline-grid;
+    width: auto;
+    margin: 5px 10px;
+    img {
+      height: 60px;
+    }
+    h2 {
+      font-style: italic;
+      grid-column: 2 / 3;
+      font-size: 1.5em;
+      margin: 5px 10px;
+      color: black;
+      @include wide-m {
+        margin: 10px 10px;
+      }
+    }
+    &:hover {
+      text-decoration: underline $siplilla;
+    }
+    &:active {
+      text-decoration: $siplilla;
+    }
   }
 }
 .lowerHeader {
   padding: 20px 10px;
+  margin: 0;
   position: sticky; /* Fester header til toppen av viewport når man har scrollet ned til den.*/
   top: 0;
-  height: 60px;
   transition: 0.2s;
   z-index: 5; /* Sørger for at header ligger foran alle andre elementer. */
   a {
@@ -58,71 +84,115 @@ body {
       list-style-type: none;
       a {
         text-decoration: none;
-        color: black;
+        color: #46378a;
         font-weight: bold;
         &:hover {
           text-decoration: underline;
         }
+        .gjennomstrek {
+          text-decoration: line-through;
+        }
       }
     }
-    #handlekurv {
+    #billetter,
+    #genser {
+      font-weight: bold;
+      text-decoration: #46378a wavy underline;
+      text-underline-offset: 20%;
+      &:hover {
+        color: #ff9300;
+        text-decoration: #ff9300 wavy underline;
+      }
+    }
+    #stormrevyenno {
       align-self: flex-end;
       margin-left: auto;
     }
-    .sip {
-      color: var(--SIPOrange);
-    }
+    /*
+    #genser {
+      color: #ff9300;
+      text-decoration: #ff9300 wavy underline;
+      text-underline-offset: 20%;
+      &:hover {
+        color: #46378a;
+        text-decoration: #46378a wavy underline;
+      }
+    }*/
+  }
+  *,
+  *:before,
+  *:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
 }
 
 /*  - Content -  */
 
-.content {
+#hoopla-sales-page-container {
   width: 80%;
-  background-color: white;
-  border-radius: 12px;
-  color: black;
-  margin: 1vh auto;
-  overflow: hidden;
+  margin: auto;
+  @include wide-m {
+    width: 100%;
+  }
+}
+
+#hoopla-sales-page-application {
+  .styles_eventContainer-3KX3x {
+    .styles_eventImage_kQkKW {
+    }
+    .styles_eventInfo_3DzJR {
+      .styles_date_3jhJF {
+        color: red;
+      }
+      .styles_name_3lNyY {
+      }
+    }
+    div {
+      button {
+      }
+    }
+  }
+}
+.styles_date_3jhJF {
+  color: red;
+}
+
+.billett-banner {
+  display: grid;
+  grid-template-rows: 1fr 4fr 1fr;
+  background-color: $siplilla;
   div {
-    padding: 1vw 0;
-  }
-  video {
+    grid-area: 2 / 1 / 3 / 2;
+    background-color: $siporange;
     width: 100%;
-    margin-bottom: -1vw;
-  }
-  iframe {
-    width: 100%;
-    height: 80vh;
-  }
-  h2 {
-    padding: 0 1vw;
-    color: #47c2a9;
-    border-bottom: #47c2a9 2px solid;
-  }
-  h3 {
-    padding: 0 1vw;
-    color: #ca3f44;
-  }
-  a {
-    padding: 0;
-    &:hover {
-      color: #ca3f44;
+    padding: 5px 10px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    @include wide-m {
+      grid-template-rows: 1fr 1fr;
+      font-size: 1.2em;
     }
-    i {
-      float: right;
-      margin: 1vh;
+    h2 {
+      color: white;
+      margin-left: 10%;
+      @include wide-m {
+        grid-area: 1 / 1 / 2 / 3;
+        margin-left: 0;
+      }
     }
-  }
-  h6 {
-    margin: 1vw;
-    color: rgba(0, 0, 0, 0.5);
-  }
-  h4,
-  a {
-    padding: 1vw;
-    color: #ed89a5;
-    text-decoration: none;
+    a {
+      color: $siplilla;
+      margin-right: 10%;
+      @include wide-m {
+        grid-area: 2 / 2 / 3 / 3;
+        margin-right: 0;
+      }
+      &:hover {
+        text-decoration: white underline;
+      }
+    }
   }
 }
 
@@ -131,6 +201,9 @@ h1 {
   font-family: acumin-pro, sans-serif;
   font-weight: 800;
   font-size: 3em;
+  @include wide-m {
+    font-size: 1.5em;
+  }
 }
 
 h2 {
@@ -138,6 +211,9 @@ h2 {
   font-family: acumin-pro, sans-serif;
   font-weight: 800;
   font-size: 1.4em;
+  @include wide-m {
+    font-size: 1em;
+  }
 }
 
 h3 {
@@ -145,12 +221,9 @@ h3 {
   font-family: acumin-pro-condensed, sans-serif;
   font-weight: 800;
   font-size: 1.2em;
-}
-
-h4 {
-  margin: 0;
-  font-family: acumin-pro-condensed, sans-serif;
-  font-weight: 400;
+  @include wide-m {
+    font-size: 1em;
+  }
 }
 
 h6 {
@@ -160,6 +233,17 @@ h6 {
   font-size: 0.7em;
 }
 
+a {
+  text-decoration: none;
+  margin: 0;
+  font-family: acumin-pro, sans-serif;
+  font-weight: 800;
+  font-size: 1.4em;
+  @include wide-m {
+    font-size: 1em;
+  }
+}
+
 p {
   padding: 1vw;
   margin: 0;
@@ -167,101 +251,73 @@ p {
   font-weight: 100;
 }
 
-.imgContent {
-  width: 80%;
-  margin: auto;
-  margin-bottom: 1vh;
-  border-radius: 12px;
-  overflow: hidden;
-  img {
-    width: 100%;
-    object-fit: cover;
+#mobileOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #00000070;
+  z-index: 10;
+  #mobilePopup {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding: 30px 20px;
+    width: 350px;
+    height: 320px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.623);
+    z-index: 11;
+    h3 {
+      border-bottom: #47c2a9 2px solid;
+    }
+    img {
+      width: 30%;
+      margin: auto;
+    }
+    button {
+      background-color: black;
+      color: white;
+      border: 2px solid #47c2a9;
+      padding: 5px 3px;
+      margin: 5px 0;
+    }
   }
+}
+
+.hide {
+  display: none;
 }
 
 /*  - Footer -  */
+.footer {
+  padding: 0 2rem 20% 2rem;
+  text-align: center;
+  transform: translateZ(0);
 
-footer {
-  background-color: #47c2a9;
-  color: white;
-  height: auto;
-  padding: 2vw 2vw 0 2vw;
-  font-family: acumin-pro-semi-condensed, sans-serif;
-  font-weight: 800;
   a {
-    color: white;
-    text-decoration: none;
-    &:hover {
-      color: #ca3f44;
+    display: inline-block;
+    position: relative;
+    color: black;
+
+    &:before {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: 3px;
+      left: 0;
+      height: 1px;
+      background-color: black;
+      opacity: 0;
+      transition: opacity 0.25s;
     }
-    i {
-      font-size: 36px;
-      margin: 5px;
-    }
-    img {
-      fill: white;
-    }
   }
 }
-
-#instagramIcon {
-  fill: white;
-}
-
-#footer-main {
-  display: flex;
-  font-size: 2em;
-  li {
-    list-style-type: none;
-    display: flex;
-    flex-flow: column;
-    justify-content: space-evenly;
-  }
-  div {
-    flex-grow: 1;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  /* Endrer footers oppbygning når viewport er smalere enn 600px, fungerer ikke optimalt og trenger mer arbeid.*/
-  #footer-main {
-    flex-flow: column;
-    align-items: center;
-  }
-  #footer-main div {
-    margin: 1vw;
-  }
-  #footer-nav {
-    order: 1;
-  }
-  #footer-right {
-    order: 2;
-  }
-  #footer-right img {
-    max-width: 40%;
-  }
-  #footer-mid {
-    order: 3;
-  }
-}
-
-#footer-left,
-#footer-mid {
-  display: flex;
-  flex-flow: column;
-  justify-content: space-between;
-}
-
-#footer-mid div {
-  flex-grow: 1;
-}
-
-#footer-logo {
-  height: 50%;
-  margin: auto;
-}
-
 #byline {
   text-align: center;
-  font-size: 0.7em;
+  font-size: 0.5em;
 }

@@ -47,33 +47,14 @@ $mx-width: 50rem;
   clear: both;
 }
 
-html,
-body {
-  width: 100%;
-  height: 100%;
-}
-
-body {
-  font-family: "Myriad Pro", sans-serif;
-  font-size: 100%;
-  line-height: 1.5;
-  color: $font-base;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  @include wide-m {
-    font-size: 70%;
-  }
-}
-
-a {
+#wrap-3d a {
   text-decoration: none;
-  color: $font-spot;
+  color: #46378a;
 }
 
 strong {
   font-weight: normal;
-  color: $font-dark;
+  color: #ff9300;
 }
 
 // =========================
@@ -90,6 +71,9 @@ strong {
   transform-style: preserve-3d;
   perspective: 150rem;
   perspective-origin: 50% 110%;
+  @include wide-m {
+    font-size: 70%;
+  }
 }
 
 // =========================
@@ -305,97 +289,13 @@ strong {
     transition: opacity 0.25s;
   }
 
-  &:after {
-    content: "\003E";
-    padding-left: 0.5rem;
-    text-decoration: none;
-  }
-
   &:hover:before,
   &:active:before,
   &:focus:before {
     opacity: 0.5;
   }
-}
-
-// =========================
-// the intro
-// =========================
-.intro {
-  position: relative;
-  width: 100%;
-  max-width: $mx-width;
-  margin: 0 auto;
-  padding: 15% 2rem;
-  text-align: center;
-
-  &:after {
-    content: "\2193";
-    position: absolute;
-    bottom: 20%;
-    left: 0;
-    width: 100%;
-    font-size: 150%;
-    animation: scroll-arrw 1s -1s infinite linear;
-  }
-}
-
-@keyframes scroll-arrw {
-  0% {
-    transform: translateY(0);
-    opacity: 0;
-  }
-  50% {
-    transform: translateY(80%);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(160%);
-    opacity: 0;
-  }
-}
-
-.intro h1 {
-  font-size: 250%;
-  font-weight: normal;
-  color: $font-dark;
-}
-
-.intro p {
-  margin-bottom: 2rem;
-  font-size: 175%;
-  line-height: 1.4286;
-}
-
-// =========================
-// the footer
-// =========================
-.footer {
-  padding: 0 2rem 20% 2rem;
-  text-align: center;
-  transform: translateZ(0);
-
-  a {
-    display: inline-block;
-    position: relative;
-    color: $font-dark;
-
-    &:before {
-      content: "";
-      position: absolute;
-      right: 0;
-      bottom: 3px;
-      left: 0;
-      height: 1px;
-      background-color: $font-dark;
-      opacity: 0;
-      transition: opacity 0.25s;
-    }
-
-    &:hover:before,
-    &:active:before,
-    &:focus:before {
-      opacity: 0.5;
-    }
+  &:active {
+    text-decoration: #46378a;
+    color: #46378a;
   }
 }
