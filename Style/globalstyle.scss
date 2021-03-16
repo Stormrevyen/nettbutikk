@@ -39,24 +39,23 @@ body {
 
 /*  - Header -    */
 .upperHeader {
-  padding-top: 5px;
   background-color: white;
   a {
     display: inline-grid;
     width: auto;
-    margin: 5px 10px;
+    margin: 1vh 2vw 0;
     img {
       height: 60px;
+      @include screen-s{
+        height: 40px;
+      }
     }
     h2 {
       font-style: italic;
       grid-column: 2 / 3;
       font-size: 1.5em;
-      margin: 5px 10px;
+      margin: 0 1vw 1vh;
       color: black;
-      @include screen-s {
-        margin: 10px 10px;
-      }
     }
     &:hover {
       text-decoration: underline $siplilla;
@@ -67,7 +66,7 @@ body {
   }
 }
 .lowerHeader {
-  padding: 20px 10px;
+  padding: 0 1vw 1vh;
   margin: 0;
   position: sticky; /* Fester header til toppen av viewport når man har scrollet ned til den.*/
   top: 0;
@@ -173,16 +172,16 @@ body {
     grid-area: 2 / 1 / 3 / 2;
     background-color: $siporange;
     width: 100%;
-    padding: 5px 10px;
+    padding: 1vh 10%;
     display: grid;
     grid-template-columns: 2fr 1fr;
     @include screen-s {
       grid-template-rows: 1fr 1fr;
       font-size: 1.2em;
+      padding: 1vh 5vw;
     }
     h2 {
       color: white;
-      margin-left: 10%;
       @include screen-s {
         grid-area: 1 / 1 / 2 / 3;
         margin-left: 0;
@@ -190,7 +189,6 @@ body {
     }
     a {
       color: $siplilla;
-      margin-right: 10%;
       @include screen-s {
         grid-area: 2 / 2 / 3 / 3;
         margin-right: 0;

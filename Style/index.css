@@ -1,14 +1,3 @@
-.slideshow {
-  /* Next & previous buttons */
-  /* Position the "next button" to the right */
-  /* On hover, add a black background color with a little bit see-through */
-  /* Caption text */
-  /* Number text (1/3 etc) */
-  /* The dots/bullets/indicators */
-  /* Fading animation */
-  /* On smaller screens, decrease text size */
-}
-
 .slideshow * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -94,9 +83,9 @@
 
 .slideshow .fade {
   -webkit-animation-name: fade;
+          animation-name: fade;
   -webkit-animation-duration: 1.5s;
-  animation-name: fade;
-  animation-duration: 1.5s;
+          animation-duration: 1.5s;
 }
 
 @-webkit-keyframes fade {
