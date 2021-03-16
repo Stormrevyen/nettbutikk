@@ -50,7 +50,7 @@ body {
   color: black;
 }
 
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 500px) {
   .upperHeader a h2 {
     margin: 10px 10px;
   }
@@ -164,7 +164,7 @@ body {
   margin: auto;
 }
 
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 500px) {
   #hoopla-sales-page-container {
     width: 100%;
   }
@@ -201,7 +201,7 @@ body {
       grid-template-columns: 2fr 1fr;
 }
 
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 500px) {
   .billett-banner div {
     -ms-grid-rows: 1fr 1fr;
         grid-template-rows: 1fr 1fr;
@@ -214,7 +214,7 @@ body {
   margin-left: 10%;
 }
 
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 500px) {
   .billett-banner div h2 {
     -ms-grid-row: 1;
     -ms-grid-row-span: 1;
@@ -230,7 +230,7 @@ body {
   margin-right: 10%;
 }
 
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 500px) {
   .billett-banner div a {
     -ms-grid-row: 2;
     -ms-grid-row-span: 1;
@@ -253,7 +253,7 @@ h1 {
   font-size: 3em;
 }
 
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 500px) {
   h1 {
     font-size: 1.5em;
   }
@@ -266,7 +266,7 @@ h2 {
   font-size: 1.4em;
 }
 
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 500px) {
   h2 {
     font-size: 1em;
   }
@@ -279,7 +279,7 @@ h3 {
   font-size: 1.2em;
 }
 
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 500px) {
   h3 {
     font-size: 1em;
   }
@@ -300,7 +300,7 @@ a {
   font-size: 1.4em;
 }
 
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 500px) {
   a {
     font-size: 1em;
   }

@@ -4,8 +4,14 @@ $siplilla: #46378a;
 $sipgul: #fdc300;
 $siporange: #ff9300;
 
-@mixin wide-m {
+@mixin screen-m {
   @media screen and (max-width: 780px) {
+    @content;
+  }
+}
+
+@mixin screen-s {
+  @media screen and (max-width: 500px) {
     @content;
   }
 }
@@ -26,7 +32,7 @@ body {
 }
 
 .mobileHide {
-  @include wide-m {
+  @include screen-m {
     display: none;
   }
 }
@@ -48,7 +54,7 @@ body {
       font-size: 1.5em;
       margin: 5px 10px;
       color: black;
-      @include wide-m {
+      @include screen-s {
         margin: 10px 10px;
       }
     }
@@ -133,7 +139,7 @@ body {
 #hoopla-sales-page-container {
   width: 80%;
   margin: auto;
-  @include wide-m {
+  @include screen-s {
     width: 100%;
   }
 }
@@ -170,14 +176,14 @@ body {
     padding: 5px 10px;
     display: grid;
     grid-template-columns: 2fr 1fr;
-    @include wide-m {
+    @include screen-s {
       grid-template-rows: 1fr 1fr;
       font-size: 1.2em;
     }
     h2 {
       color: white;
       margin-left: 10%;
-      @include wide-m {
+      @include screen-s {
         grid-area: 1 / 1 / 2 / 3;
         margin-left: 0;
       }
@@ -185,7 +191,7 @@ body {
     a {
       color: $siplilla;
       margin-right: 10%;
-      @include wide-m {
+      @include screen-s {
         grid-area: 2 / 2 / 3 / 3;
         margin-right: 0;
       }
@@ -201,7 +207,7 @@ h1 {
   font-family: acumin-pro, sans-serif;
   font-weight: 800;
   font-size: 3em;
-  @include wide-m {
+  @include screen-s {
     font-size: 1.5em;
   }
 }
@@ -211,7 +217,7 @@ h2 {
   font-family: acumin-pro, sans-serif;
   font-weight: 800;
   font-size: 1.4em;
-  @include wide-m {
+  @include screen-s {
     font-size: 1em;
   }
 }
@@ -221,7 +227,7 @@ h3 {
   font-family: acumin-pro-condensed, sans-serif;
   font-weight: 800;
   font-size: 1.2em;
-  @include wide-m {
+  @include screen-s {
     font-size: 1em;
   }
 }
@@ -239,7 +245,7 @@ a {
   font-family: acumin-pro, sans-serif;
   font-weight: 800;
   font-size: 1.4em;
-  @include wide-m {
+  @include screen-s {
     font-size: 1em;
   }
 }
