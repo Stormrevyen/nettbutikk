@@ -158,6 +158,24 @@ body {
 }
 
 /*  - Content -  */
+#billettercd {
+  margin-left: 10%;
+}
+
+@media screen and (max-width: 500px) {
+  #billettercd {
+    margin-left: 2%;
+  }
+}
+
+#billettercd string {
+  color: black;
+}
+
+#billettercd string #countdownN {
+  color: #ff9300;
+}
+
 #hoopla-sales-page-container {
   width: 80%;
   margin: auto;
@@ -194,42 +212,44 @@ body {
   background-color: #ff9300;
   width: 100%;
   padding: 1vh 10%;
-  display: -ms-grid;
-  display: grid;
   -ms-grid-columns: 2fr 1fr;
       grid-template-columns: 2fr 1fr;
 }
 
 @media screen and (max-width: 500px) {
   .billett-banner div {
-    -ms-grid-rows: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
+    -ms-grid-rows: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
     font-size: 1.2em;
     padding: 1vh 5vw;
   }
 }
 
-.billett-banner div h2 {
+.billett-banner div #bannerfyll h2 {
   color: white;
 }
 
 @media screen and (max-width: 500px) {
-  .billett-banner div h2 {
-    -ms-grid-row: 1;
-    -ms-grid-row-span: 1;
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 2;
-    grid-area: 1 / 1 / 2 / 3;
+  .billett-banner div #bannerfyll h2 {
     margin-left: 0;
   }
 }
 
-.billett-banner div a {
+.billett-banner div #bannerfyll h2 #countdown {
+  color: white;
+}
+
+.billett-banner div #bannerfyll h2 #countdown #countdownN {
   color: #46378a;
 }
 
+a {
+  color: #46378a;
+  text-align: right;
+}
+
 @media screen and (max-width: 500px) {
-  .billett-banner div a {
+  a {
     -ms-grid-row: 2;
     -ms-grid-row-span: 1;
     -ms-grid-column: 2;
@@ -239,7 +259,7 @@ body {
   }
 }
 
-.billett-banner div a:hover {
+a:hover {
   -webkit-text-decoration: white underline;
           text-decoration: white underline;
 }
