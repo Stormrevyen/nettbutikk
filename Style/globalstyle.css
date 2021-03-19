@@ -243,6 +243,34 @@ body {
   color: #46378a;
 }
 
+#errorContainer {
+  width: 50%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin: 4vh auto 20vh;
+  padding: 4vh 4vw;
+  font-size: 1.5em;
+  color: white;
+  background-color: #46378a;
+}
+
+#errorContainer img {
+  height: 60px;
+}
+
+@media screen and (max-width: 780px) {
+  #errorContainer {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #errorContainer {
+    width: 90%;
+  }
+}
+
 a {
   color: #46378a;
   text-align: right;

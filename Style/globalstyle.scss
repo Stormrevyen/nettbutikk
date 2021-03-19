@@ -46,7 +46,7 @@ body {
     margin: 1vh 2vw 0;
     img {
       height: 60px;
-      @include screen-s{
+      @include screen-s {
         height: 40px;
       }
     }
@@ -134,14 +134,14 @@ body {
 }
 
 /*  - Content -  */
-#billettercd{
+#billettercd {
   margin-left: 10%;
   @include screen-s {
     margin-left: 2%;
   }
-  string{
+  string {
     color: black;
-    #countdownN{
+    #countdownN {
       color: $siporange;
     }
   }
@@ -191,15 +191,15 @@ body {
       font-size: 1.2em;
       padding: 1vh 5vw;
     }
-    #bannerfyll{
-      h2{
+    #bannerfyll {
+      h2 {
         color: white;
         @include screen-s {
           margin-left: 0;
         }
-        #countdown{
+        #countdown {
           color: white;
-          #countdownN{
+          #countdownN {
             color: $siplilla;
           }
         }
@@ -208,18 +208,36 @@ body {
   }
 }
 
-    
-    a {
-      color: $siplilla;
-      text-align: right;
-      @include screen-s {
-        grid-area: 2 / 2 / 3 / 3;
-        margin-right: 0;
-      }
-      &:hover {
-        text-decoration: white underline;
-      }
-    }
+#errorContainer {
+  width: 50%;
+  height: fit-content;
+  margin: 4vh auto 20vh;
+  padding: 4vh 4vw;
+  font-size: 1.5em;
+  color: white;
+  background-color: $siplilla;
+  img {
+    height: 60px;
+  }
+  @include screen-m {
+    width: 70%;
+  }
+  @include screen-s {
+    width: 90%;
+  }
+}
+
+a {
+  color: $siplilla;
+  text-align: right;
+  @include screen-s {
+    grid-area: 2 / 2 / 3 / 3;
+    margin-right: 0;
+  }
+  &:hover {
+    text-decoration: white underline;
+  }
+}
 
 h1 {
   margin: 1vw;
